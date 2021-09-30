@@ -1,0 +1,41 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+//== MIXINS
+
+@mixin main_font {
+}
+
+@mixin secondary_font {
+}
+
+//== COLORS
+
+
+body {
+	@include main-font;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+
+//====================
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.container {
+	padding: 0px 20px;
+	max-width: 1256px;
+	margin: 0px auto;
+}
