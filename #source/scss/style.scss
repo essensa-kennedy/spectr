@@ -40,15 +40,6 @@
  }
 
  @font-face {
-	font-family: 'Montserrat-Regular';
-	src: url('/fonts/Montserrat-Regular.ttf') format('truetype'),
-		  url('/fonts/Montserrat-Regular.woff') format('woff'),
-		  url('/fonts/Montserrat-Regular.woff2') format('woff2');
-	font-weight: normal;
-	font-style: normal;
- }
-
- @font-face {
 	font-family: 'Montserrat-SemiBold';
 	src: url('/fonts/Montserrat-SemiBold.ttf') format('truetype'),
 		  url('/fonts/Montserrat-SemiBold.woff') format('woff'),
@@ -57,11 +48,21 @@
 	font-style: normal;
  }
 
+ @font-face {
+	font-family: 'Montserrat-Regular';
+	src: url('/fonts/Montserrat-Regular.ttf') format('truetype'),
+		  url('/fonts/Montserrat-Regular.woff') format('woff'),
+		  url('/fonts/Montserrat-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+ }
 
 @mixin main_font {
+font-family: MullerRegular;
 }
 
 @mixin secondary_font {
+font-family: Montserrat-Regular;
 }
 
 //== COLORS
@@ -69,8 +70,10 @@ $dark: #190F29;
 $blue: #45A9E2;
 $white: #FFFFFF;
 $light-blue: #C9E4F4;
-$grey-purple: #756989;
+$grey-purple: #B5AFBF;
+$dark-purple: #514760;
 $dark-blue: #28698D;
+$gradient: linear-gradient(26.57deg, #E7138A 0.3%, #902A8B 18.66%, #65318D 41.93%, #3860AC 67.63%, #2AA7DF 100.08%);
 
 
 body {
