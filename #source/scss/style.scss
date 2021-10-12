@@ -59,10 +59,12 @@
 
 @mixin main_font {
 font-family: MullerRegular;
+line-height: 140%;
 }
 
 @mixin secondary_font {
 font-family: Montserrat-Regular;
+line-height: 140%;
 }
 
 //== COLORS
@@ -102,4 +104,200 @@ body.lock {
 	padding: 0px 20px;
 	max-width: 1256px;
 	margin: 0px auto;
+}
+
+.mainscreen {
+	background-color: $dark;
+	background-image: url(/img/bg.png);
+	background-repeat: no-repeat;
+  &__nav {
+	  padding-top: 40px;
+  }
+  &__content {
+	  display: flex;
+  }
+  &__information {}
+  &__title {
+	  position: relative;
+	  @include main_font();
+	  font-weight: bold;
+	  font-size: 60px;
+	  line-height: 120%;
+	  letter-spacing: 0.02em;
+	  color: $white;
+	  margin-top: 105px;
+	  width: 630px;
+	  z-index: 2;
+  }
+  &__subtitle {
+	  @include secondary_font();
+	  margin-top: 15px;
+	  color: $grey-purple;
+	  font-size: 20px;
+  }
+  &__button {}
+  &__img {
+	  margin-top: 100px;
+	  width: 800px;
+	  margin-bottom: 180px;
+  }
+}
+ 
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  &__logo {}
+  &__menu {
+	@include main_font();
+	color: $white;
+	font-size: 20px;
+	display: flex;
+	// a:not(:first-child
+	li:not(:first-child) {
+		margin-left: 50px;
+	}
+	li:last-child {
+		color: $blue;
+		margin-left: 100px;
+	}
+  }
+}
+
+.menu-icon {
+	a {position: relative;}
+	span::before {
+		display: inline-block;
+		position: absolute;
+		content: '';
+		background: url(/img/calling.svg);
+		width: 24px;
+		height: 24px;
+		top: -3px;
+		left: -30px;
+
+	}
+}
+
+.button {
+	padding: 50px 0px;
+	@include main_font();
+	font-size: 17px;
+	color: $white;
+	background: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	z-index: 4;
+	
+	:hover {
+		transition: color 0.5s ease-in-out;
+		color: $grey-purple;
+	}
+
+	:hover + svg {
+		transition: color 0.5s ease-in-out;
+		transform: translateX(10px);
+	}
+	
+	svg {
+		display: inline-block;
+		position: absolute;
+		overflow:visible;
+		:hover {
+			transform: translateX(10px);
+		}
+		}
+
+	span {
+		display: inline-block;
+		margin-top: 20%;
+		margin-left: 30px;
+		position: relative;
+		z-index: 3;
+
+		
+	}
+	
+	span::after {
+			display: inline-block;
+			position: absolute;
+			content: '';
+			background: url(/img/arrow.svg);
+			width: 73px;
+			height: 11px;
+			top: 3px;
+			right: -90px;
+			z-index: 1;
+	}
+		
+}
+
+.bg-gradient {
+}
+
+.about {
+  &__pretitle {}
+  &__title {}
+  &__information {}
+  &__subtitle {}
+  &__text {}
+  &__advantages {}
+  &__advantages-item {}
+  &__advantages-number {}
+  &__advantages-title {}
+  &__advantages-subtitle {}
+}
+
+.title {
+}
+
+.services {
+  &__wrapper {}
+  &__title {}
+  &__items {}
+  &__item {}
+  &__item-name {}
+  &__item-button {}
+  &__subtitle {}
+}
+
+.clients {
+  &__wrapper {}
+  &__content {}
+  &__information {}
+  &__title {}
+  &__subtitle {}
+  &__text {}
+  &__items {}
+  &__smalllogo {}
+  &__biglogo {}
+  &__img {}
+}
+
+.small-img {
+}
+
+.big-img {
+  &__text {}
+}
+
+.footer {
+  &__content {}
+  &__services {}
+  &__logo {}
+  &__links {}
+  &__contacts {}
+  &__phone {}
+  &__phone-title {}
+  &__phone-number {}
+  &__bottom {}
+  &__leftside {}
+  &__address {}
+  &__address-title {}
+  &__address-text {}
+  &__email {}
+  &__email-title {}
+  &__email-text {}
+  &__qr {}
+  &__copyright {}
 }

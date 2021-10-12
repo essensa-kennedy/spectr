@@ -15,14 +15,16 @@
             <nav class="nav mainscreen__nav">
               <div class="nav__logo">
                 <img src="/img/logo.svg" alt="" />
-                <ul class="nav__menu">
-                  <li>О нас</li>
-                  <li>Услуги</li>
-                  <li>Клиенты</li>
-                  <li>Контакты</li>
-                  <li class="menu-icon">Обратный звонок</li>
-                </ul>
               </div>
+              <ul class="nav__menu">
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="">Клиенты</a></li>
+                <li><a href="">Контакты</a></li>
+                <li class="menu-icon">
+                  <a href="#"><span>Обратный звонок</span></a>
+                </li>
+              </ul>
             </nav>
             <div class="mainscreen__content">
               <div class="mainscreen__information">
@@ -34,12 +36,43 @@
                   подходом
                 </div>
                 <button class="button mainscreen__button">
+                  <svg
+                    class="button__svg"
+                    width="100"
+                    height="100"
+                    viewBox="0 0 100 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      id="Ellipse 2"
+                      d="M97.5 50C97.5 76.2335 76.2335 97.5 50 97.5C23.7665 97.5 2.5 76.2335 2.5 50C2.5 23.7665 23.7665 2.5 50 2.5C76.2335 2.5 97.5 23.7665 97.5 50Z"
+                      stroke="url(#paint0_linear)"
+                      stroke-width="5"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear"
+                        x1="0.296284"
+                        y1="99.6991"
+                        x2="60.1639"
+                        y2="-20.0352"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#E7138A" />
+                        <stop offset="0.184" stop-color="#902A8B" />
+                        <stop offset="0.4172" stop-color="#65318D" />
+                        <stop offset="0.6748" stop-color="#3860AC" />
+                        <stop offset="1" stop-color="#2AA7DF" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
                   <span>Узнать подробнее</span>
                 </button>
               </div>
-            </div>
-            <div class="mainscreen__img">
-              <img src="/img/abstract.svg" alt="" />
+              <div class="mainscreen__img">
+                <img src="/img/abstract.svg" alt="" />
+              </div>
             </div>
           </div>
         </section>
@@ -113,7 +146,130 @@
               </div>
             </div>
           </section>
+          <section class="clients">
+            <div class="clients__wrapper">
+              <div class="container">
+                <div class="clients__content">
+                  <div class="clients__information">
+                    <div class="title clients__title">Наши клиенты</div>
+                    <div class="clients__subtitle">
+                      это компании малого и среднего бизнеса, федеральные и
+                      региональные органы власти, работающие в различных
+                      областях
+                    </div>
+                    <div class="clients__text">
+                      Мнение и желание наших клиентов никогда не останется без
+                      внимания
+                    </div>
+                    <div class="clients__items">
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/1big.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/2big.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/3big.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/4big.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/5big.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="clients__smalllogo">
+                        <img
+                          class="small-img"
+                          src="/img/partners/6big.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clients__biglogo">
+                    <div class="clients__img">
+                      <img
+                        class="big-img"
+                        src="/img/partners/1big.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="big-img__text">
+                      Администрация Краснодарского края
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
+        <section class="footer">
+          <div class="container">
+            <div class="footer__content">
+              <div class="footer__services">
+                <div class="footer__logo">
+                  <img src="/img/logo.svg" alt="" />
+                </div>
+                <div class="footer__links">
+                  <a href="#">Консалтинговые услуги</a>
+                  <a href="#">Разработка веб и мобильных приложений</a>
+                  <a href="#">Техническое сопровождение ит-проектов</a>
+                  <a href="#">Внедрение голосовых помощников</a>
+                </div>
+              </div>
+              <div class="footer__contacts">
+                <div class="footer__phone">
+                  <div class="footer__phone-title">Контактный телефон:</div>
+                  <div class="footer__phone-number">8-918-444-45-13</div>
+                </div>
+                <div class="footer__bottom">
+                  <div class="footer__leftside">
+                    <div class="footer__address">
+                      <div class="footer__address-title">
+                        Будем рады видеть Вас:
+                      </div>
+                      <div class="footer__address-text">
+                        Краснодар, Красная 54
+                      </div>
+                    </div>
+                    <div class="footer__email">
+                      <div class="footer__email-title">Электронная почта:</div>
+                      <div class="footer__email-text">
+                        <a href="#">cto@it-spectrum.tech</a>
+                      </div>
+                    </div>
+                    <div class="footer__qr">
+                      <img src="/img/partners/QR.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__copyright">
+                Дизайн и разработка - KNDY design
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </body>
