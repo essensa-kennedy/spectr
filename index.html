@@ -36,37 +36,9 @@
                   подходом
                 </div>
                 <button class="button mainscreen__button">
-                  <svg
-                    class="button__svg"
-                    width="100"
-                    height="100"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      id="Ellipse 2"
-                      d="M97.5 50C97.5 76.2335 76.2335 97.5 50 97.5C23.7665 97.5 2.5 76.2335 2.5 50C2.5 23.7665 23.7665 2.5 50 2.5C76.2335 2.5 97.5 23.7665 97.5 50Z"
-                      stroke="url(#paint0_linear)"
-                      stroke-width="5"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear"
-                        x1="0.296284"
-                        y1="99.6991"
-                        x2="60.1639"
-                        y2="-20.0352"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#E7138A" />
-                        <stop offset="0.184" stop-color="#902A8B" />
-                        <stop offset="0.4172" stop-color="#65318D" />
-                        <stop offset="0.6748" stop-color="#3860AC" />
-                        <stop offset="1" stop-color="#2AA7DF" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
+                  <div class="button__circle">
+                    <div class="button__dark"></div>
+                  </div>
                   <span>Узнать подробнее</span>
                 </button>
               </div>
@@ -97,16 +69,23 @@
               </div>
               <div class="about__advantages">
                 <div class="about__advantages-item">
-                  <div class="about__advantages-number"><span>>10</span></div>
+                  <div class="about__advantages-number">
+                    <div class="about__advantages-gradient"></div>
+                    <span>>10</span>
+                  </div>
                   <div class="about__advantages-title">
-                    реализованных проектов
+                    реализованных <br />
+                    проектов
                   </div>
                   <div class="about__advantages-subtitle">
                     в государственном и коммерческом секторах
                   </div>
                 </div>
                 <div class="about__advantages-item">
-                  <div class="about__advantages-number"><span>16</span></div>
+                  <div class="about__advantages-number">
+                    <div class="about__advantages-gradient"></div>
+                    <span>>16</span>
+                  </div>
                   <div class="about__advantages-title">
                     квалифицированных специалистов
                   </div>
@@ -115,7 +94,10 @@
                   </div>
                 </div>
                 <div class="about__advantages-item">
-                  <div class="about__advantages-number"><span>90%</span></div>
+                  <div class="about__advantages-number">
+                    <div class="about__advantages-gradient"></div>
+                    <span>>90%</span>
+                  </div>
                   <div class="about__advantages-title">
                     заказчиков возвращаются к нам
                   </div>
@@ -133,19 +115,115 @@
                 <div class="title services__title">Спектр услуг</div>
                 <div class="services__items">
                   <div class="services__item">
-                    <div class="services__item-name">консалтинговые услуги</div>
-                    <button class="button services__item-button">
-                      <span>заказать</span>
-                    </button>
+                    <div class="services__top">
+                      <div class="services__item-name">
+                        консалтинговые услуги в сфере информтехнологий
+                      </div>
+                      <button class="button services__button">
+                        <div class="button__circle">
+                          <div class="button__dark"></div>
+                        </div>
+                        <span>Заказать</span>
+                      </button>
+                    </div>
                     <div class="services__subtitle">
                       Расскажем как автоматизировать и оптимизировать процессы с
                       использованием ИТ
+                    </div>
+                  </div>
+                  <div class="services__item">
+                    <div class="services__top">
+                      <div class="services__item-name">
+                        разработка веб и мобильных приложений
+                      </div>
+                      <button class="button services__button">
+                        <div class="button__circle">
+                          <div class="button__dark"></div>
+                        </div>
+                        <span>Заказать</span>
+                      </button>
+                    </div>
+                    <div class="services__subtitle">
+                      Разработаем и запустим веб-приложение для любой платформы
+                    </div>
+                  </div>
+                  <div class="services__item">
+                    <div class="services__top">
+                      <div class="services__item-name">
+                        техническое сопровождение ит-проектов
+                      </div>
+                      <button class="button services__button">
+                        <div class="button__circle">
+                          <div class="button__dark"></div>
+                        </div>
+                        <span>Заказать</span>
+                      </button>
+                    </div>
+                    <div class="services__subtitle">
+                      Возьмем на себя техническую сторону поддержания
+                      работоспособности Вашей ИТ-инфраструктуры
+                    </div>
+                  </div>
+                  <div class="services__item">
+                    <div class="services__top">
+                      <div class="services__item-name">
+                        внедрение голосовых помощников
+                      </div>
+                      <button class="button services__button">
+                        <div class="button__circle">
+                          <div class="button__dark"></div>
+                        </div>
+                        <span>Заказать</span>
+                      </button>
+                    </div>
+                    <div class="services__subtitle">
+                      Создадим индивидуального голосового помощника для работы с
+                      Вашими клиентами
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+			 <section class="getintouch">
+				 <div class="getintouch__wrapper">
+					 <div class="container">
+						 <div class="getintouch__content">
+							 <div class="getintouch__form">
+								 <form class="form" action="" method="post">
+									 <div class="form__name">
+										 <label class="label" for="POST-name"></label>
+										 <input id="POST-name" type="text" name="name" placeholder="Представьтесь">
+									 </div>
+
+									 <div class="form__phone">
+										<label class="label" for="POST-phone"></label>
+										<input id="POST-phone" type="phone" name="phone" placeholder="Введите номер телефона">
+									</div>
+
+									<div class="form__checkbox">
+										<div class="checkbox__items">
+											<input type="checkbox" name="choose_box1" id="formCheckbox1" value="choose_box1"
+												class="checkbox__input">
+											<label for="formCheckbox1" class="checkbox__label"><span>
+													Согласен с <a href="#">политикой конфиденциальности сайта</a></label>
+											</span>
+										</div>
+									</div>
+									 
+									<button type="submit" class="big-button">Заказать звонок</button>
+								 </form>
+							 </div>
+							 <div class="getintouch__right">
+								<div class="title getintouch__title">Давайте обсудим Вашу задачу?</div>
+								<div class="getintouch__subtitle">Заполните простую форму обратной связи
+								  и наш специалист перезвонит в течение <span>15 минут</span></div>
+							 </div>
+						 </div>
+					 </div>
+				 </div>
+				 
+			 </section>
           <section class="clients">
             <div class="clients__wrapper">
               <div class="container">

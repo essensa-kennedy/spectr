@@ -4,7 +4,7 @@
 //== MIXINS
 
 @font-face {
-	font-family: 'MullerRegular';
+	font-family: 'Muller';
 	src: url('/fonts/MullerRegular.ttf') format('truetype'),
 		  url('/fonts/MullerRegular.woff') format('woff'),
 		  url('/fonts/MullerRegular.woff2') format('woff2');
@@ -13,11 +13,20 @@
  }
 
  @font-face {
-	font-family: 'MullerMedium';
+	font-family: 'Muller';
 	src: url('/fonts/MullerMedium.ttf') format('truetype'),
 		  url('/fonts/MullerMedium.woff') format('woff'),
 		  url('/fonts/MullerMedium.woff2') format('woff2');
-	font-weight: normal;
+	font-weight: medium;
+	font-style: normal;
+ }
+
+ @font-face {
+	font-family: 'Muller';
+	src: url('/fonts/MullerBold.ttf') format('truetype'),
+		  url('/fonts/MullerBold.woff') format('woff'),
+		  url('/fonts/MullerBold.woff2') format('woff2');
+	font-weight: bold;
 	font-style: normal;
  }
 
@@ -58,12 +67,12 @@
  }
 
 @mixin main_font {
-font-family: MullerRegular;
+font-family: Muller;
 line-height: 140%;
 }
 
 @mixin secondary_font {
-font-family: Montserrat-Regular;
+font-family: Montserrat;
 line-height: 140%;
 }
 
@@ -188,34 +197,60 @@ body.lock {
 	text-transform: uppercase;
 	font-weight: bold;
 	z-index: 4;
+	transition: all 0.5s ease-in-out;
 	
 	:hover {
 		transition: color 0.5s ease-in-out;
 		color: $grey-purple;
 	}
 
-	:hover + svg {
-		transition: color 0.5s ease-in-out;
-		transform: translateX(10px);
+	:hover > &__circle {
+		transition: all 0.8s ease 0s;;
+		transform: translateX(5px);
+	}
+
+	&__circle {
+		width: 100px;
+		height: 100px;
+		background-color: $dark;
+		border-radius: 50%;
+		z-index: 5;
+		position: relative;
+	}
+
+	&__circle::after {
+		content: '';
+		position: absolute;
+		background: linear-gradient(26.57deg, #E7138A 0.3%, #902A8B 18.66%, #65318D 41.93%, #3860AC 67.63%, #2AA7DF 100.08%) no-repeat;
+		width: 100px;
+		height: 100px;
+		top:0;
+		left:0;
+		z-index: 4;
+		border-radius: 50%;
 	}
 	
-	svg {
-		display: inline-block;
+	&__dark {
+		width: 90px;
+		height: 90px;
+		background: $dark;
+		border-radius: 50%;
+		z-index: 5;
+		top: 5px;
+		left:5px;
 		position: absolute;
-		overflow:visible;
-		:hover {
-			transform: translateX(10px);
-		}
-		}
+	}
+	 
 
+
+	 
 	span {
 		display: inline-block;
 		margin-top: 20%;
 		margin-left: 30px;
 		position: relative;
-		z-index: 3;
-
-		
+		z-index: 6;
+		top: -100px;
 	}
 	
 	span::after {
@@ -233,33 +268,227 @@ body.lock {
 }
 
 .bg-gradient {
+	background: linear-gradient(167.12deg, #ECF2F4 -1.44%, #F3F4EC 23.93%, #EDE6F8 47.23%, #F3F0F3 72.6%, #F7F7F7 97.97%);
 }
 
 .about {
-  &__pretitle {}
-  &__title {}
-  &__information {}
-  &__subtitle {}
-  &__text {}
-  &__advantages {}
-  &__advantages-item {}
-  &__advantages-number {}
-  &__advantages-title {}
-  &__advantages-subtitle {}
+  &__pretitle {
+	  opacity: 50%;
+	  padding-top: 70px;
+	  @include main_font();
+	  font-size: 20px;
+	  color: $dark-purple;
+	  position: relative;
+	  margin-left: 20px;
+
+	  ::before {
+		  content: '';
+		  background: url(/img/location.svg);
+		  width: 24px;
+		  height: 24px;
+		  position: absolute;
+		  left: -30px;
+		  
+	  }
+  }
+
+  &__title {
+	  color: $dark;
+  }
+  &__information {
+	  display: flex;
+	  margin-top: 40px;
+  }
+  &__subtitle {
+	  flex: 1 0 50%;
+		@include secondary_font();
+		font-weight: 500;
+		font-size: 22px;
+		color: $dark;
+  }
+  &__text {
+	margin-left: 50px;
+	flex: 1 1 50%;
+	@include secondary_font();
+	font-size: 17px;
+	color: $dark-purple;
+
+  }
+  &__advantages {
+	  margin-top: 110px;
+	  display: flex;
+	  justify-content: space-between;
+	
+  }
+  &__advantages-item {
+	//   :not(:last-child) {
+	// 	  margin-right: 45px;
+	// 	}
+	  flex: 1 1 31%;
+	  display: flex;
+	  flex-direction: column;
+  }
+
+  &__advantages-gradient {
+	width: 180px;
+	height: 180px;
+	background: $gradient;
+	z-index: 3;
+	position: relative;
+	border-radius: 50%;
+	transform: translateX(40px);
+  }
+
+  &__advantages-number {
+	
+	span {
+		display: flex;
+		justify-content: center;
+		align-items: center ;
+		background: $white;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		font-size: 30px;
+		color: $blue;
+		font-weight: 700;
+		position: absolute;
+		z-index: 5;
+		transform: translateY(-160px);
+		box-shadow: 14px 4px 13px rgba(15, 51, 63, 0.26);		
+	}
+
+
+}
+
+  &__advantages-title {
+	  margin-top: 25px;
+	  @include secondary_font();
+	  font-size: 24px;
+	  color: $dark;
+	  font-weight: bold;
+	  text-transform: uppercase;
+
+  }
+  &__advantages-subtitle {
+	  margin-top: 5px;
+	  width: 394px;
+	  @include secondary_font();
+	  font-size: 17px;
+	  margin-bottom: 100px;
+  }
 }
 
 .title {
+	@include main_font();
+	font-size: 50px;
+	font-weight: bold;
 }
 
 .services {
-  &__wrapper {}
-  &__title {}
-  &__items {}
-  &__item {}
-  &__item-name {}
-  &__item-button {}
-  &__subtitle {}
+  &__wrapper {
+	  background: $dark;
+	  max-width: 1718px;
+	  margin: 0 auto;
+	  padding: 100px 0px;
+  }
+  &__title {
+	  color:$white;
+  }
+  &__items {
+		margin-top: 45px;
+	  display: flex;
+	  flex-wrap: wrap;
+  }
+  &__item {
+	  flex: 0 1 50%;
+	  display: flex;
+	  flex-direction: column;
+	  margin-bottom: 60px;
+  }
+
+  &__top {
+	  display: flex;
+  }
+  &__item-name {
+	  flex: 0 0 50%;
+	  @include secondary_font();
+	  font-weight: bold;
+	  margin-right: 20px;
+		font-size: 24px;
+		color: $white;
+		text-transform: uppercase;
+  }
+
+  &__subtitle {
+	  margin-top: -30px;
+	  max-width: 548px;
+	  @include secondary_font();
+	  font-size: 20px;
+	  color: $grey-purple;
+  }
+
+  &__button {
+	padding: 0px;
+	align-content: flex-end;
 }
+}
+ 
+.getintouch {
+	&__wrapper {
+		background: $dark;
+	  max-width: 1718px;
+	  margin: 0 auto;
+	  padding: 100px 0px;
+	}
+	&__content {
+		display: flex;
+		// flex-wrap: nowrap;
+		// flex-grow: 0;
+		// flex-shrink: 0;
+	}
+	&__form {
+		flex: 0 0 550px;
+		background: linear-gradient(26.57deg, rgba(231, 19, 138, 0.1) 0.3%, rgba(144, 42, 139, 0.1) 18.66%, rgba(101, 49, 141, 0.1) 41.93%, rgba(56, 96, 172, 0.1) 67.63%, rgba(42, 167, 223, 0.1) 100.08%);
+		border: 4px solid rgba(69, 169, 226, 1);
+		box-shadow: 14px 4px 13px 0px rgba(15, 51, 63, 0.26);
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		width: 550px;
+		height: 550px;
+		border-radius: 500px;
+		overflow: visible;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	}
+	&__right {}
+	&__title {
+		color:$white;
+	}
+	&__subtitle {
+		@include secondary_font();
+		font-size: 20px;
+		color: $grey-purple;
+	}
+ }
+
+ .form {
+	&__name {}
+	&__phone {}
+	&__checkbox {}
+ }
+ .label {
+ }
+ .checkbox {
+	&__items {}
+	&__input {}
+	&__label {}
+ }
+ .big-button {
+ }
+ 
 
 .clients {
   &__wrapper {}
