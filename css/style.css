@@ -656,6 +656,7 @@ a:hover {
   border-radius: 50%;
   margin-right: 25px;
   transition: all 0.8s ease 0s;
+  cursor: pointer;
 }
 
 .clients .small-img--active {
@@ -696,6 +697,7 @@ a:hover {
 
 .footer__links a {
   margin-bottom: 40px;
+  transition: all 0.8s ease 0s;
 }
 
 .footer__links :hover {
