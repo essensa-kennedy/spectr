@@ -98,6 +98,12 @@ body.lock {
 
 //====================
 
+
+a:hover {
+	transition: color 0.4s ease 0s;
+	color: $blue;
+}
+
 .wrapper {
 	min-height: 100%;
 	overflow: hidden;
@@ -189,86 +195,54 @@ body.lock {
 }
 
 .button {
-	padding: 50px 0px;
-	@include main_font();
-	font-size: 17px;
-	color: $white;
-	background: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	z-index: 4;
-	transition: all 0.5s ease-in-out;
+	margin-top: 50px;
+	width: 120px;
+  height: 120px;
+  border: double 3px transparent;
+  border-radius: 50%;
+  background-image: linear-gradient($dark, $dark), 
+                    $gradient;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  position: relative;
+  box-shadow: 14px 4px 13px rgba(15, 1, 27, 0.46);
+  transition: all 0.6s ease 0.1s;
+
+  span {
+	  opacity: 80%;
+	  display: inline;
+	  position: absolute;
+	  font-size: 17px;
+	  color: $white;
+	  @include main_font();
+	  text-transform: uppercase;
+	  top: 35%;
+	  left: 50%;
+	  transition: all 0.6s ease 0.1s;
+  }
 	
-	:hover {
-		transition: color 0.5s ease-in-out;
-		color: $grey-purple;
-	}
+}
 
-	:hover > &__circle {
-		transition: all 0.8s ease 0s;;
-		transform: translateX(5px);
-	}
+.button:hover {
+	border: double 60px transparent;
+	background-image: linear-gradient(#0e071a, #0e071a),
+                    $gradient;
+	transform: translateX(10px);
 
-	&__circle {
-		width: 100px;
-		height: 100px;
-		background-color: $dark;
-		border-radius: 50%;
-		z-index: 5;
-		position: relative;
-	}
-
-	&__circle::after {
-		content: '';
-		position: absolute;
-		background: linear-gradient(26.57deg, #E7138A 0.3%, #902A8B 18.66%, #65318D 41.93%, #3860AC 67.63%, #2AA7DF 100.08%) no-repeat;
-		width: 100px;
-		height: 100px;
-		top:0;
-		left:0;
-		z-index: 4;
-		border-radius: 50%;
-	}
-	
-	&__dark {
-		width: 90px;
-		height: 90px;
-		background: $dark;
-		border-radius: 50%;
-		z-index: 5;
-		top: 5px;
-		left:5px;
-		position: absolute;
-	}
-	 
-
-
-	 
 	span {
-		display: inline-block;
-		margin-top: 20%;
-		margin-left: 30px;
-		position: relative;
-		z-index: 6;
-		top: -100px;
+		opacity: 100%;
 	}
-	
-	span::after {
-			display: inline-block;
-			position: absolute;
-			content: '';
-			background: url(/img/arrow.svg);
-			width: 73px;
-			height: 11px;
-			top: 3px;
-			right: -90px;
-			z-index: 1;
+}
+
+.mainscreen__button {
+	span {
+		width: 200px;
 	}
-		
 }
 
 .bg-gradient {
 	background: linear-gradient(167.12deg, #ECF2F4 -1.44%, #F3F4EC 23.93%, #EDE6F8 47.23%, #F3F0F3 72.6%, #F7F7F7 97.97%);
+	padding-bottom:20px;
 }
 
 .about {
@@ -390,28 +364,30 @@ body.lock {
 	  background: $dark;
 	  max-width: 1718px;
 	  margin: 0 auto;
-	  padding: 100px 0px;
+	  padding: 100px 0px 40px 0px;
   }
   &__title {
 	  color:$white;
   }
   &__items {
-		margin-top: 45px;
+		margin-top: 50px;
 	  display: flex;
+	  justify-content: space-between;
 	  flex-wrap: wrap;
   }
   &__item {
-	  flex: 0 1 50%;
+	  flex: 0 43.3%;
 	  display: flex;
 	  flex-direction: column;
-	  margin-bottom: 60px;
+	  margin-bottom: 80px;
   }
 
   &__top {
 	  display: flex;
+	 
   }
   &__item-name {
-	  flex: 0 0 50%;
+	  flex: 0 0 55%;
 	  @include secondary_font();
 	  font-weight: bold;
 	  margin-right: 20px;
@@ -421,7 +397,7 @@ body.lock {
   }
 
   &__subtitle {
-	  margin-top: -30px;
+	  margin-top: 15px;
 	  max-width: 548px;
 	  @include secondary_font();
 	  font-size: 20px;
@@ -430,16 +406,21 @@ body.lock {
 
   &__button {
 	padding: 0px;
-	align-content: flex-end;
+	margin-top: 0px;
+	
 }
 }
  
 .getintouch {
 	&__wrapper {
-		background: $dark;
+	  background-color: $dark;
+	  background-image: url(/img/bg_getintouch.png);
+	  background-repeat: no-repeat;
 	  max-width: 1718px;
 	  margin: 0 auto;
-	  padding: 100px 0px;
+	//   padding: 80px 0px;
+	padding-bottom: 100px;
+	  position: relative;
 	}
 	&__content {
 		display: flex;
@@ -463,70 +444,328 @@ body.lock {
 		justify-content: center;
 
 	}
-	&__right {}
+	.img-form {
+position: absolute;
+	}
+
+	&__right {
+		
+		margin-left: 100px;
+		margin-top: 100px;
+	}
 	&__title {
+		width: 426px;
 		color:$white;
+
 	}
 	&__subtitle {
+		margin-top: 20px;
 		@include secondary_font();
 		font-size: 20px;
 		color: $grey-purple;
+
+		span {
+			color: $blue;
+		}
 	}
  }
 
- .form {
-	&__name {}
+  .form {
+	 display: flex;
+	 flex-direction: column;
+	 position: relative;
+
+	 .input {
+		width: 350px;
+		height: 45px;
+		background-color: transparent;
+		border-bottom: 2px solid $blue;
+		font-size: 17px;
+		@include secondary_font();
+		color: $white;
+		padding: 5px 15px;
+		margin-bottom: 30px;
+	}
+	&__name {
+		
+	}
 	&__phone {}
 	&__checkbox {}
  }
  .label {
+	 
  }
  .checkbox {
-	&__items {}
-	&__input {}
-	&__label {}
+	
+	&__items {
+		width: 270px;
+		display: flex;
+		.checkbox {
+			margin-top: 5px;
+		}
+	}
+	&__input {
+	}
+	&__label {
+		margin-left: 5px;
+		font-size: 17px;
+		@include secondary_font();
+		color: $dark-purple;
+		margin-bottom: 40px;
+		.link {
+			color: $blue;
+		}
+	}
  }
- .big-button {
+ 
+.big-button {
+	position: absolute;
+	bottom: -50%;
+	right: -50%;
+	width: 160px;
+	height: 160px;
+	span {
+		display: inline;
+		font-size: 17px;
+		color: $white;
+		@include main_font();
+		text-transform: uppercase;
+		transition: all 0.6s ease 0.1s;
+		top: 40%;
+		left: 25%;
+		width: 200px;
+		::before {
+			content: '';
+			background-image: none;
+		}
+	}
+}
+
+.big-button:hover {
+	border: double 80px transparent;
+		background-image: linear-gradient(#0e071a, #0e071a),
+							  $gradient;
+		transform: translateX(10px);
+		span {
+			opacity: 100%;
+		}
+}
+
+.clients {
+	
+  
+	&__wrapper {
+	
+	max-width: 1718px;
+	margin: 100px auto;
+	border: 4px solid #FFFFFF;
+  }
+  &__content {
+	  padding: 80px 0px;
+  }
+
+	&__leftside {}
+	&__rightside {
+		flex: 0 0 50%;
+	}
+	&__biglogo {
+		
+		filter: drop-shadow(13px 2px 20px rgba(48, 19, 48, 0.22));
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		img {
+			width: 250px;
+			height: 250px;
+			border: 4px solid $blue;
+			border-radius: 50%;
+		  }
+
+	}
+	&__description {
+		
+		margin-top: 20px;
+		@include secondary_font();
+		font-size: 20px;
+		font-weight: 600;
+		max-width: 350px;
+		text-align: center;
+		color: $dark;
+	}
+
+ .title {
  }
  
 
-.clients {
-  &__wrapper {}
-  &__content {}
-  &__information {}
-  &__title {}
-  &__subtitle {}
-  &__text {}
-  &__items {}
-  &__smalllogo {}
-  &__biglogo {}
-  &__img {}
+  &__information {
+	display: flex;
+	// justify-content: space-between;
+  }
+  &__title {
+	  color: $dark;
+  }
+  &__subtitle {
+	  margin-top: 40px;
+	  @include secondary_font();
+	  width: 554px;
+	  font-weight: 500;
+	  font-size: 22px;
+	  color: $dark-purple;
+  }
+  &__text {
+	  margin-top: 20px;
+	  @include secondary_font();
+	  font-size: 17px;
+	  color: $dark-purple;
+
+  }
+  &__items {
+	  margin-top: 50px;
+	  display: flex;
+  }
+  &__smalllogo {
+	  img {
+		width: 120px;
+		height: 120px;
+		border: 4px solid $white;
+		border-radius: 50%;
+		margin-right: 25px;
+		transition: all 0.8s ease 0s;
+	  }  
+
+  }
+
+
+ .small-img--active {
+	border: 4px solid $blue;
+ }
+
+ 
+
 }
 
-.small-img {
-}
-
-.big-img {
-  &__text {}
-}
+ 
 
 .footer {
-  &__content {}
-  &__services {}
-  &__logo {}
-  &__links {}
-  &__contacts {}
-  &__phone {}
-  &__phone-title {}
-  &__phone-number {}
-  &__bottom {}
-  &__leftside {}
-  &__address {}
-  &__address-title {}
-  &__address-text {}
-  &__email {}
-  &__email-title {}
-  &__email-text {}
-  &__qr {}
-  &__copyright {}
+	background-color: $dark;
+	background-image: url(/img/bgcircle_footer.png);
+	background-repeat: no-repeat;
+	background-position: 70% 40%;
+  &__content {
+	  padding: 90px 0px 20px 0px;
+	  display: flex;
+	  align-items: center;
+	  
+  }
+  &__services {
+	  display: flex;
+	  flex-direction: column;
+	  flex: 1 0 30.8%;
+  }
+  &__logo {
+	  margin-bottom: 30px;
+  }
+  &__links {
+	display: flex;
+	flex-direction: column;
+	font-size: 17px;
+	color: $grey-purple;
+	@include secondary_font();
+	a {
+		margin-bottom: 40px;
+
+		
+	}
+	:hover {
+		color: $blue;
+	}
+
+
+  }
+  &__contacts {
+	  flex: 0 0 56.7%;
+	
+	  
+  }
+  &__phone {
+	  display: flex;
+	  align-items: center;
+	  padding-bottom: 40px;
+	  border-bottom: 3px solid #24143D;
+  }
+  &__phone-title {
+	  flex: 0 0 40%;
+	font-size: 20px;
+	font-weight: 500;
+	color: $grey-purple;
+	@include secondary_font();
+  }
+  &__phone-number {
+	color: $white;
+	flex: 0 0 60%;
+	font-size: 48px;
+	font-weight: bold;
+  }
+  &__bottom {
+
+  }
+  &__leftside {
+	position: relative;
+	  
+  }
+  &__address {
+	padding-top: 40px; 
+	padding-bottom: 40px; 
+	display: flex;
+	align-items: center;
+  }
+  &__address-title {
+	font-size: 20px;
+	flex: 0 0 40%;
+	font-weight: 500;
+	color: $grey-purple;
+	@include secondary_font();
+  }
+  &__address-text {
+	font-size: 22px;
+	font-weight: bold;
+	flex: 0 0 60%;
+	color: $white;
+  }
+  &__email {
+	display: flex;
+	align-items: center;
+	
+  }
+  &__email-title {
+	font-size: 20px;
+	flex: 0 0 40%;
+	font-weight: 500;
+	color: $grey-purple;
+	@include secondary_font();
+  }
+  &__email-text {
+	font-size: 22px;
+	font-weight: bold;
+	flex: 0 0 60%;
+	a {
+	color: $blue;
+	
+}
+  }
+  &__qr {
+	  img {
+		  position: absolute;
+		  right: 0;
+		  top: 20%;
+		  border-radius: 10px;
+	  }
+  }
+  &__copyright {
+	font-size: 15px;
+	font-weight: 500;
+	color: $dark-purple;
+	@include secondary_font();
+	padding-bottom: 80px;
+  }
 }
