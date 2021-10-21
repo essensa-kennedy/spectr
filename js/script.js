@@ -19,24 +19,18 @@
 
 // });
 
-// $(document).ready(function () {
-// 	$('.quotes__row').slick({
-// 		arrows: false,
-// 		slidesToShow: 2,
-// 		autoplay: true,
-// 		autoplaySpeed: 2000,
+const iconMenu = document.querySelector('.menu__icon')
+// const body = document.querySelector('body')
 
-// 	});
-// });
-
-// document.onclick = function(e) {
-// 	e = e || window.event;
-// 	let o = e.srcElement||e.target;
-// 	let current = document.querySelector('.img-biglogo')
-// 	console.log(current.attributes("src"))
-// 	console.log(current)
-// }
-
+if (iconMenu) {
+	const bodyMenu = document.querySelector('.menu__body')
+	iconMenu.addEventListener('click', function (e) {
+		body.classList.toggle('_lock')
+		iconMenu.classList.toggle('_active')
+		bodyMenu.classList.toggle('_active')
+	})
+	
+}
 
 function selectPicture(el) {
 
